@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoinConnect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="testnew.css" />
+  </head>
+  <body>
+    <section>
+      <header>
+        <nav>
+          <!-- <div class="logo">CoinConnect</div> -->
+          <!-- <button class="nav-button" onclick="location.href=''">Home</button>
+          <button class="nav-button" onclick="location.href=''">About</button>
+          <button class="nav-button" onclick="location.href=''">
+            Tutorials
+          </button>
+          <button class="nav-button" onclick="location.href=''">Contact</button> -->
+          <h1>CoinConnect</h1>
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Tutorials</a>
+          <a href="">Contact</a>
+        </nav>
+      </header>
+    </section>
+    <main>
+      <section>
+        <div class="welcome">
+          <div class="welcome-text">
+            <h1>Welcome to CoinConnect</h1>
+            <p>
+              CoinConnect is a web-app where you can view all of your
+              cryptocurrency assets from
+              <a
+                href="https://www.coinbase.com/"
+                target="”_blank”"
+                class="exchange-name"
+                >Coinbase</a
+              >,
+              <a
+                href="https://www.gemini.com/"
+                target="”_blank”"
+                class="exchange-name"
+                >Gemini</a
+              >, and
+              <a
+                href="https://www.ledger.com/ledger-live"
+                target="”_blank”"
+                class="exchange-name"
+                >Ledger Live</a
+              >
+              in one place. The app utilizes your API keys from your Coinbase
+              and Gemini accounts, as well as a CSV file of your assets from
+              Ledger Live. Connect your API keys and CSV file to get started
+              now!
+            </p>
+          </div>
+          <a href="" id="learn">About #</a>
+        </div>
+      </section>
+
+      <section class="connect-section">
+        <div class="connect-accounts">
+          <h2>Connect Your Accounts</h2>
+          <p id="instructions">
+            Start by clicking on one of the icons to fill in your account
+            information. <br />
+            Once you click an icon, a tutorial will appear on how to obtain the
+            needed information.
+          </p>
+        </div>
+        <div class="account-buttons">
+          <img
+            src="images/coinbase.png"
+            alt=""
+            class="account-button"
+            onclick="showDiv('coinbase')"
+          />
+          <img
+            src="images/ledger.png"
+            alt=""
+            class="account-button"
+            onclick="showDiv('ledger')"
+          />
+          <img
+            src="images/gemini.png"
+            alt=""
+            class="account-button"
+            onclick="showDiv('gemini')"
+          />
+        </div>
+
+        <div class="grid-container">
+          <div class="tutorials" style="display: none">
+            <h3 class="grid-header" id="tutorial-text">Tutorial for :</h3>
+            <iframe
+              width="1280"
+              height="712"
+              src="https://www.youtube.com/embed/f66lxniu0Ks"
+              title="Big.Buck.Bunny sample"
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <div class="accounts">
+            <h3 class="grid-header">Information:</h3>
+
+            <div id="connect-coinbase" style="display: none">
+              <!-- Coinbase API Key Form -->
+              <form
+                action="http://127.0.0.1:5000/api/coinbase/keys"
+                method="post"
+              >
+                <label for="coinbaseApiKey">Coinbase API Key:</label>
+                <input
+                  type="text"
+                  id="coinbaseApiKey"
+                  name="api_key"
+                  placeholder="API Key"
+                  class="text-input"
+                />
+                <br />
+                <label for="coinbaseApiSecret">Coinbase API Secret:</label>
+                <input
+                  type="text"
+                  id="coinbaseApiSecret"
+                  name="api_secret"
+                  placeholder="API Secret"
+                  class="text-input"
+                />
+                <input type="submit" value="Set Coinbase Keys" />
+              </form>
+            </div>
+
+            <div id="connect-gemini" style="display: none">
+              <!-- Gemini API Key Form -->
+              <form
+                action="http://127.0.0.1:5000/api/gemini/keys"
+                method="post"
+              >
+                <label for="geminiApiKey">Gemini API Key:</label>
+                <input
+                  type="text"
+                  id="geminiApiKey"
+                  name="api_key"
+                  placeholder="API Key"
+                  class="text-input"
+                />
+                <br />
+                <label for="geminiApiSecret">Gemini API Secret:</label>
+                <input
+                  type="text"
+                  id="geminiApiSecret"
+                  name="api_secret"
+                  placeholder="API Secret"
+                  class="text-input"
+                />
+                <input type="submit" value="Set Gemini Keys" />
+              </form>
+            </div>
+
+            <div id="connect-ledger" style="display: none">
+              <!-- Upload Ledger CSV Form -->
+              <form
+                action="/api/ledger/upload-csv"
+                method="POST"
+                enctype="multipart/form-data"
+              >
+                <label for="file">File:</label>
+                <input type="file" id="file" name="file" /> <br />
+                <button>Upload</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 CoinConnect. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
