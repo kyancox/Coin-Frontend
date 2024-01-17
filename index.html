@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="testnew.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <section>
@@ -24,10 +24,11 @@
           </button>
           <button class="nav-button" onclick="location.href=''">Contact</button> -->
           <h1>CoinConnect</h1>
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Tutorials</a>
-          <a href="">Contact</a>
+          <div class="nav-links">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Tutorials</a>
+          </div>
         </nav>
       </header>
     </section>
@@ -63,7 +64,7 @@
               now!
             </p>
           </div>
-          <a href="" id="learn">About #</a>
+          <a href="about.html" id="learn">About #</a>
         </div>
       </section>
 
@@ -112,78 +113,97 @@
             ></iframe>
           </div>
 
-          <div class="accounts">
-            <h3 class="grid-header">Information:</h3>
+          <div class="accounts-column">
+            <h3 class="grid-header" id="info-header" style="display: none">
+              Information:
+            </h3>
 
-            <div id="connect-coinbase" style="display: none">
-              <!-- Coinbase API Key Form -->
-              <form
-                action="http://127.0.0.1:5000/api/coinbase/keys"
-                method="post"
-              >
-                <label for="coinbaseApiKey">Coinbase API Key:</label>
-                <input
-                  type="text"
-                  id="coinbaseApiKey"
-                  name="api_key"
-                  placeholder="API Key"
-                  class="text-input"
-                />
-                <br />
-                <label for="coinbaseApiSecret">Coinbase API Secret:</label>
-                <input
-                  type="text"
-                  id="coinbaseApiSecret"
-                  name="api_secret"
-                  placeholder="API Secret"
-                  class="text-input"
-                />
-                <input type="submit" value="Set Coinbase Keys" />
-              </form>
+            <div class="accounts">
+              <div id="connect-coinbase" style="display: none">
+                <!-- Coinbase API Key Form -->
+                <form
+                  action="http://127.0.0.1:5000/api/coinbase/keys"
+                  method="post"
+                >
+                  <label for="coinbaseApiKey">Coinbase API Key:</label>
+                  <input
+                    type="text"
+                    id="coinbaseApiKey"
+                    name="api_key"
+                    placeholder="API Key"
+                    class="text-input"
+                  />
+                  <br />
+                  <label for="coinbaseApiSecret">Coinbase API Secret:</label>
+                  <input
+                    type="text"
+                    id="coinbaseApiSecret"
+                    name="api_secret"
+                    placeholder="API Secret"
+                    class="text-input"
+                  />
+                </form>
+              </div>
+
+              <div id="connect-gemini" style="display: none">
+                <!-- Gemini API Key Form -->
+                <form
+                  action="http://127.0.0.1:5000/api/gemini/keys"
+                  method="post"
+                >
+                  <label for="geminiApiKey">Gemini API Key:</label>
+                  <input
+                    type="text"
+                    id="geminiApiKey"
+                    name="api_key"
+                    placeholder="API Key"
+                    class="text-input"
+                  />
+                  <br />
+                  <label for="geminiApiSecret">Gemini API Secret:</label>
+                  <input
+                    type="text"
+                    id="geminiApiSecret"
+                    name="api_secret"
+                    placeholder="API Secret"
+                    class="text-input"
+                  />
+                </form>
+              </div>
+
+              <div id="connect-ledger" style="display: none">
+                <!-- Upload Ledger CSV Form -->
+                <form
+                  action="/api/ledger/upload-csv"
+                  method="POST"
+                  enctype="multipart/form-data"
+                >
+                  <label for="file">File:</label>
+                  <input type="file" id="file" name="file" /> <br />
+                </form>
+              </div>
             </div>
+          </div>
 
-            <div id="connect-gemini" style="display: none">
-              <!-- Gemini API Key Form -->
-              <form
-                action="http://127.0.0.1:5000/api/gemini/keys"
-                method="post"
-              >
-                <label for="geminiApiKey">Gemini API Key:</label>
-                <input
-                  type="text"
-                  id="geminiApiKey"
-                  name="api_key"
-                  placeholder="API Key"
-                  class="text-input"
-                />
-                <br />
-                <label for="geminiApiSecret">Gemini API Secret:</label>
-                <input
-                  type="text"
-                  id="geminiApiSecret"
-                  name="api_secret"
-                  placeholder="API Secret"
-                  class="text-input"
-                />
-                <input type="submit" value="Set Gemini Keys" />
-              </form>
-            </div>
-
-            <div id="connect-ledger" style="display: none">
-              <!-- Upload Ledger CSV Form -->
-              <form
-                action="/api/ledger/upload-csv"
-                method="POST"
-                enctype="multipart/form-data"
-              >
-                <label for="file">File:</label>
-                <input type="file" id="file" name="file" /> <br />
-                <button>Upload</button>
-              </form>
-            </div>
-
+          <div class="submit-buttons">
+            <input
+              type="submit"
+              value="Set Coinbase Keys"
+              style="display: none"
+              id="submit-coinbase"
+            />
+            <input
+              type="submit"
+              value="Set Gemini Keys"
+              style="display: none"
+              id="submit-gemini"
+            />
+            <button style="display: none" id="submit-ledger">Upload</button>
           </div>
         </div>
+        <!-- add input tracker section, add view assets button  -->
+        <h3>Loaded:</h3>
+        <a href="">Show Assets</a>
       </section>
     </main>
 
