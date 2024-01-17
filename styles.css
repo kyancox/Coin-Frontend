@@ -8,21 +8,25 @@ body {
   background-color: beige;
 }
 
-/* Header */
-header {
+/* Nav-Bar */
+nav {
+  padding-top: 20px;
   font-size: larger;
   background-color: #020035;
   color: white;
-
-  display: flex;
-  justify-content: space-evenly;
+  width: 100%;
 }
 
-header h1 {
+nav h1 {
   display: inline-block;
+  margin-left: 25px;
 }
 
-header a {
+.nav-link {
+  padding-left: 325px;
+}
+
+nav a {
   text-decoration: none;
   color: white;
 }
