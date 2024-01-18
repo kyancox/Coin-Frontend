@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">CoinConnect</div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="tutorials.html" class="nav-item">Tutorials</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="background">
+        <div class="github">
+          <a
+            href="https://github.com/kyancox/Coinbase-Gemini-and-Ledger-Live-Assets-in-Terminal"
+            >GitHub Repo</a
+          >
+        </div>
+
+        <h1>About</h1>
+
+        <div class="what">
+          <h2>What is #?</h2>
+          <p>
+            # is a web-app where you can view all of your cryptocurrency assets
+            from Coinbase, Gemini, and Ledger Live in one place. # acts as a
+            centralized portfolio, gathering data from your other portfolios in
+            order to know how much of an asset you have across all of your
+            accounts. In the cryptocurrency universe, it is common to transfer
+            your assets across different accounts; some users buy their coin on
+            exchanges like Coinbase or Gemini, and then transfer those assets to
+            a hard wallet like Ledger. With that being said, it can be tedious
+            to know how much Bitcoin you have in total if you have to hop around
+            three different accounts every time you’re curious. With #, the
+            allocation is done for you.
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="how">
+          <h2>How does # work?</h2>
+          <p>
+            # utilizes standard REST API’s from Coinbase and Gemini, as well as
+            the operations history CSV from Ledger Live. When the user submits
+            their API Key and API Secret from Coinbase and or Gemini, the
+            backend makes API calls to the respective exchange’s REST API to
+            gather data on their assets. The real-time price of an asset is
+            gathered using the CoinMarketCap API. Coinbase offers an API call
+            that gathers the real-time price of an asset, but Gemini does not.
+            Therefore, the CoinMarketCap API was used to gather the real-time
+            prices for scalability.
+          </p>
+        </div>
+
+        <h1>Design Decisions</h1>
+        <div class="complications-ledger">
+          <h2>Complication with Ledger Live</h2>
+          <p>
+            As Ledger’s hardware acts as a cold wallet, the device only holds
+            your private transaction keys and nothing else; your Ledger device
+            doesn’t have a ‘centralized account’ where you can view all of your
+            assets virtually. Therefore, the only way to view your Ledger assets
+            in code is through parsing the Operations History CSV.
+            Unfortunately, the CSV only tracks transactions done on a single
+            device, so if you connect your Ledger wallet to a different device
+            and import your crypto then you wouldn’t be able to see the
+            transactions made on that device through a single CSV. The only
+            other option to view your Ledger assets virtually would be to grab
+            your public transaction keys for your assets from Ledger and then
+            view those transactions on the blockchain, but the work to grab a
+            user’s public transaction keys would not be worth the effort for
+            this web-app. Ledger offers a JavaScript API, but that API cannot be
+            utilized for this program because that API is meant to connect a
+            DAPP to Ledger Live, and there is no way to gather a user’s balances
+            from that API.
+            <br />
+            <br />
+          </p>
+        </div>
+
+        <div class="complications-other">
+          <h2>Other Complications</h2>
+          <p>
+            The best way to centralize the assets across Coinbase and Gemini was
+            to use API keys that utilizes the respective exchange’s REST APIs.
+            As of the creation of this program, Gemini only offers one REST API,
+            and Coinbase offers multiple REST APIs, including a Sign in with
+            Coinbase API. The Sign in with Coinbase API would allow a user to
+            sign into the program with their Coinbase account, but that API does
+            not obtain the balances of cryptocurrency assets in that user’s
+            account.
+          </p>
+        </div>
+
+        <h1>Why</h1>
+        <p>
+          As stated above, it is common to transfer your assets across different
+          accounts; some users buy their coin on exchanges like Coinbase or
+          Gemini, and then transfer those assets to a hard wallet like Ledger.
+          In certain US states, there are regulations on which states can buy
+          and can’t buy certain coins. Also, some exchanges are capable of
+          trading a certain coin, while another exchange are not (For example,
+          ENJIN coin was not capable of being purchased on Coinbase, but it was
+          capable of being purchased on Gemini). Switching between wallets to
+          view your assets can be very tedious. For investors, doing the math on
+          how much of $USD you have invested in total into crypto is an
+          important value to know, and this program takes care of that for you.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+    </footer>
+  </body>
+</html>

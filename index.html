@@ -10,17 +10,22 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <section>
-        <nav>
-          <h1>CoinConnect</h1>
-            <a href="" class="nav-link">Home</a>
-            <a href="" class="nav-link">About</a>
-            <a href="" class="nav-link">Tutorials</a>
-        </nav>
-    </section>
+
+    <header>
+      <nav class="navbar">
+        <div class="logo">CoinConnect</div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="tutorials.html" class="nav-item">Tutorials</a>
+        </div>
+      </nav>
+    </header>
+
     <main>
       <section>
         <div class="welcome">
@@ -168,6 +173,7 @@
                   enctype="multipart/form-data"
                 >
                   <label for="file">File:</label>
+                  <br>
                   <input type="file" id="file" name="file" /> <br />
                 </form>
               </div>
@@ -180,14 +186,16 @@
               value="Set Coinbase Keys"
               style="display: none"
               id="submit-coinbase"
+              class="styled-button"
             />
             <input
               type="submit"
               value="Set Gemini Keys"
               style="display: none"
               id="submit-gemini"
+              class="styled-button"
             />
-            <button style="display: none" id="submit-ledger">Upload</button>
+            <button style="display: none" class="styled-button" id="submit-ledger">Upload</button>
           </div>
         </div>
         <!-- add input tracker section, add view assets button  -->

@@ -1,35 +1,3 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Ubuntu", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  background-color: beige;
-}
-
-/* Nav-Bar */
-nav {
-  padding-top: 20px;
-  font-size: larger;
-  background-color: #020035;
-  color: white;
-  width: 100%;
-}
-
-nav h1 {
-  display: inline-block;
-  margin-left: 25px;
-}
-
-.nav-link {
-  padding-left: 325px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
 
 /* Welcome Banner */
 .welcome {
@@ -130,29 +98,10 @@ nav a {
 
 /* Info Grid */
 
-/* .tutorials {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.tutorials h3 {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.tutorials iframe {
-  width: 100%;
-  height: auto;
-  max-width: 560px;
-  max-height: 315px;
-} */
-
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
 }
 
 .grid-header {
@@ -162,15 +111,14 @@ nav a {
 }
 
 .tutorials {
-    grid-column: 1 / 2;
-    padding-left: 20px;
+  grid-column: 1 / 2;
+  padding-left: 20px;
 }
 
 .tutorials iframe {
-    width: 700px;
-    height: 500px;
+  width: 700px;
+  height: 500px;
 }
-
 
 /* Input Forms */
 
@@ -192,10 +140,39 @@ nav a {
 .submit-buttons {
   grid-column: 3;
   display: flex;
-  justify-content:center ;
+  justify-content: center;
   align-items: center;
   background-color: white;
   border: none;
 }
 
 /* Submit Buttons */
+
+.styled-button {
+  /* Visual styles */
+  padding: 10px 20px;
+  background-color: #f0e6d2; /* A very light beige, similar to default beige */
+  color: #5c5148; /* A darker shade for the text for better readability */
+  border: 2px solid #e2d1c3; /* A border that's slightly darker than the button's background */
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px #d3c2b2; /* Shadow with a color that complements the button background */
+  transition: all 0.3s ease;
+}
+
+/* Interactive states */
+.styled-button:hover {
+  background-color: #ede4da; /* A slightly lighter shade for hover */
+  border-color: #e2d1c3; /* Adjust border color for a smooth transition */
+}
+
+.styled-button:active {
+  background-color: #e2d1c3; /* An even lighter shade when active/clicked */
+  box-shadow: 0 2px #c2b1a1; /* Deeper shadow to simulate pressing */
+  transform: translateY(2px);
+}

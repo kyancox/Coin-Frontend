@@ -1,0 +1,47 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Ubuntu", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: beige;
+}
+
+/* Nav-Bar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #020035;
+  color: white;
+  padding: 0 2%; /* Adjust padding for spacing */
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.logo {
+  color:rgb(245, 245, 71);
+  font-size: 1.75rem; /* Adjust size as needed */
+  font-weight: bold;
+}
+
+.nav-links {
+  margin-right: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Allows the nav links to take up the remaining space */
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  margin: 0 100px; /* Adjust margin for spacing between links */
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
