@@ -30,7 +30,7 @@ body {
   justify-content: center; /* Aligns horizontally in the center */
   align-items: center; /* Aligns vertically in the center */
   background-color: #8b949e;
-  padding: 10px;
+  padding: 10px 20px;
   margin: 20px auto; /* Vertical margins of 20px and auto horizontal margins to center the div */
   margin-bottom: 50px;
   width: fit-content; /* Sets the width to the content of the button */
@@ -39,23 +39,22 @@ body {
 }
 
 .github a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 3rem;
-  padding: 10px 20px;
-  display: block;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
-}
-
-.github a:hover {
-  background-color: #57606a; /* Darker shade of the button color for hover */
-  transform: scale(
-    1.05
-  ); /* Slightly increase the scale to give a popping effect */
-  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-  border-radius: 4px;
-}
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+    margin: 0; /* Reset margin to ensure the scaling doesn't affect the layout */
+    padding: 0; /* Reset padding since it's now on the parent container */
+  }
+  
+  .github:hover { /* Apply the hover effect to the .github container instead of the <a> tag */
+    background-color: #57606a; /* Darker shade of the button color for hover */
+    transform: scale(1.05); /* Slightly increase the scale to give a popping effect */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+    border-radius: 4px; /* Maintain the rounded corners on hover */
+  }
 
 .background h1 {
   text-align: center;
