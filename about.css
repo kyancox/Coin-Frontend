@@ -11,12 +11,18 @@ body {
 }
 
 .background {
-  height: 100%;
-  background-color: beige;
-  color: black;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    .95
+  ); /* Semi-transparent white background for better readability */
+  color: #333; /* Dark grey color for text for better contrast */
   padding: 2%;
-  margin: 0 10% 0 10%;
-  border-radius: 10px;
+  margin: 0 10% 0 10%; /* Adjusted margin for a centered look */
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures no content spills out */
 }
 
 .github {
@@ -26,41 +32,57 @@ body {
   background-color: #8b949e;
   padding: 10px;
   margin: 20px auto; /* Vertical margins of 20px and auto horizontal margins to center the div */
+  margin-bottom: 50px;
   width: fit-content; /* Sets the width to the content of the button */
   border-radius: 4px; /* Optional: Adds rounded corners to the div */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for a 3D effect */
 }
 
 .github a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 3rem;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
-  }
-  
-  .github a:hover {
-    background-color: #57606a; /* Darker shade of the button color for hover */
-    transform: scale(1.05); /* Slightly increase the scale to give a popping effect */
-    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-    border-radius: 4px;
-  }
-  
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
+}
+
+.github a:hover {
+  background-color: #57606a; /* Darker shade of the button color for hover */
+  transform: scale(
+    1.05
+  ); /* Slightly increase the scale to give a popping effect */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+  border-radius: 4px;
+}
 
 .background h1 {
   text-align: center;
-  font-size: 2em;
-  margin-top: 50px;
-  padding: 5px 0 5px 0;
+  font-size: 2.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #0056b3; /* A color that stands out */
+  font-family: "Ubuntu", sans-serif;
 }
 
 .background h2 {
-  font-size: 2em;
+  font-size: 1.75em; /* Slightly smaller than h1 for hierarchy */
+  color: #004080; /* A slightly darker shade for subheadings */
 }
 
 .background p {
-  font-size: 1.25em;
-  font-family: "Libre Franklin";
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  text-align: justify;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .background {
+    margin: 0 5%; /* Less margin for smaller screens */
+  }
 }
