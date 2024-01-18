@@ -1,18 +1,29 @@
 async function postCoinbaseKeys(apiKey, apiSecret) {
+    try {
+        const response = await fetch('http://127.0.0.1:5000/api/coinbase/keys', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                api_key: apiKey,
+                api_secret: apiSecret
+            }),
+        });
 
-    const response = await fetch('http://127.0.0.1:5000/api/coinbase/keys', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            'api_key': apiKey,
-            'api_secret': apiSecret
-        }),
-    });
-    return await response.json();
+        if (!response.ok) {
+            const errorData = await response.json();
+            // Here, response.status will contain the HTTP status code
+            throw new Error(`Error ${response.status}: ${errorData.message}`);
+        }
 
+        return await response.json();
+    } catch (error) {
+        console.error('Error:', error);
+        throw error; // Rethrow the error so the caller can handle it
+    }
 }
+
 
 async function postGeminiKeys(apiKey, apiSecret) {
 

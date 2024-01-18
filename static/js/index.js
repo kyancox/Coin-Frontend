@@ -20,7 +20,7 @@ document.getElementById('submit-coinbase').addEventListener('click', async funct
         //updateCoinbaseUI(data);
         document.getElementById("loaded").textContent = "Coinbase";
     } catch (error) {
-        console.error('Error:', error);
+        alert(`Failed to update API keys: \n\n${error.message}`);
     }
 });
 
