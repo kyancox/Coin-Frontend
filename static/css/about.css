@@ -5,7 +5,7 @@ body {
   height: 100%;
   font-family: "Ubuntu", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background: url(images/background.jpeg) no-repeat center center fixed;
+  background: url(/static/images/background.jpeg) no-repeat center center fixed;
   background-size: cover;
   background-color: beige;
 }
@@ -44,7 +44,6 @@ body {
     font-weight: bold;
     font-size: 3rem;
     display: block;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
     margin: 0; /* Reset margin to ensure the scaling doesn't affect the layout */
     padding: 0; /* Reset padding since it's now on the parent container */
   }
@@ -52,6 +51,7 @@ body {
   .github:hover { /* Apply the hover effect to the .github container instead of the <a> tag */
     background-color: #57606a; /* Darker shade of the button color for hover */
     transform: scale(1.05); /* Slightly increase the scale to give a popping effect */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
     cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
     border-radius: 4px; /* Maintain the rounded corners on hover */
   }
