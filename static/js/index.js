@@ -34,6 +34,10 @@ document.getElementById('submit-coinbase').addEventListener('click', async funct
 
 document.getElementById('submit-gemini').addEventListener('click',  async function(event) {
   event.preventDefault();
+
+  document.getElementById('gemini-check').style.display = "none";
+  document.getElementById("loading-gif").style.display = "block";
+
   var apiKey = document.getElementById('geminiApiKey').value;
   var apiSecret = document.getElementById('geminiApiSecret').value;
 
@@ -46,10 +50,14 @@ document.getElementById('submit-gemini').addEventListener('click',  async functi
   try {
       const data = await postGeminiKeys(apiKey, apiSecret);
       console.log('Success:', data);
+      document.getElementById("loading-gif").style.display = "none";
+      document.getElementById('gemini-check').style.display = "block";
       //updateCoinbaseUI(data);
       document.getElementById("loaded").textContent = "Gemini";
   } catch (error) {
-      console.error('Error:', error);
+      document.getElementById("loading-gif").style.display = "none";
+      document.getElementById('gemini-check').style.display = "none";
+      alert(`Failed to update API keys: \n\n${error.message}`);
   }
 });
 
