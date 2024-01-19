@@ -11,27 +11,61 @@ import {
 } from "./api.js";
 
 // Function to populate the assets table on the assets.html page
-async function populateAssetsTable() {
+async function populateAssetsTable(portfolioType) {
     try {
         console.log('Populating assets.')
-        const masterData = await fetchMasterData();
-        console.log(masterData);
+        let data;
+        switch(portfolioType) {
+            case 'coinbase':
+                data = await fetchCoinbaseData();
+                break;
+            case 'gemini':
+                data = await fetchGeminiData();
+                break;
+            case 'ledger':
+                data = await fetchLedgerData();
+                break;
+            case 'master':
+            default:
+                data = await fetchMasterData();
+        }
 
-        // Assuming masterData is an object where each key is a cryptocurrency symbol
+        console.log(data);
+        const tableHead = document.getElementById('assets-table').querySelector('thead tr');
         const tableBody = document.getElementById('assets-table').querySelector('tbody');
+
+        // Update table headers based on the portfolio type
+        tableHead.innerHTML = `
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Balance</th>
+        <th>Real-Time Price</th>
+        `;
+
+        if (portfolioType === 'master') {
+            tableHead.innerHTML += `<th>Exchanges with Asset</th>`;
+        }
+  
         tableBody.innerHTML = ''; // Clear existing table rows
 
-        Object.entries(masterData).forEach(([symbol, details]) => {
+        Object.entries(data).forEach(([symbol, details]) => {
             const [name, amount, balance, realTimePrice, exchanges] = details;
-            const row = document.createElement('tr');
-            row.innerHTML = `
+            let rowHTML = `
                 <td>${symbol}</td>
                 <td>${name}</td>
                 <td>${amount}</td>
                 <td>$${balance}</td>
                 <td>$${realTimePrice}</td>
-                <td>${exchanges.join(', ')}</td>
             `;
+
+            // Include 'Exchanges with Asset' only for 'master' portfolio
+            if (portfolioType === 'master' && exchanges) {
+                rowHTML += `<td>${exchanges.join(', ')}</td>`;
+            }
+
+            const row = document.createElement('tr');
+            row.innerHTML = rowHTML;
             tableBody.appendChild(row);
         });
     } catch (error) {
@@ -40,5 +74,12 @@ async function populateAssetsTable() {
     }
 }
 
-// Call this function when the assets.html page is loaded
-document.addEventListener('DOMContentLoaded', populateAssetsTable);
+// Event listener for the portfolio dropdown
+document.addEventListener('DOMContentLoaded', () => {
+    populateAssetsTable('master'); // Default to Master portfolio
+
+    const portfolioSelect = document.getElementById('portfolio-select');
+    portfolioSelect.addEventListener('change', () => {
+        populateAssetsTable(portfolioSelect.value);
+    });
+});
