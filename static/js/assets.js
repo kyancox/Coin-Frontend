@@ -77,6 +77,9 @@ async function populateAssetsTable(portfolioType) {
             const row = document.createElement('tr');
             row.innerHTML = rowHTML;
             tableBody.appendChild(row);
+
+            document.getElementById("assets").style.display = "block";
+            document.getElementById("no-content").style.display = "none";
         });
     } catch (error) {
         console.error('Error fetching and populating assets:', error);
@@ -117,8 +120,13 @@ function setupDownloadButton() {
 
 // Event listener for the portfolio dropdown
 document.addEventListener('DOMContentLoaded', () => {
-    populateAssetsTable('master'); // Default to Master portfolio
-    setupDownloadButton();
+    try {
+        populateAssetsTable('master'); // Default to Master portfolio
+        setupDownloadButton();
+    } catch (error) {
+        document.getElementById("assets").style.display = "none";
+        document.getElementById("no-content").style.display = "block";
+    }
 
     const portfolioSelect = document.getElementById('portfolio-select');
     portfolioSelect.addEventListener('change', () => {
