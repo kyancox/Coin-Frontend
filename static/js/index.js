@@ -4,6 +4,10 @@ import { postCoinbaseKeys, postGeminiKeys, uploadLedgerCSV, fetchCoinbaseData, f
 
 document.getElementById('submit-coinbase').addEventListener('click', async function(event) {
     event.preventDefault();
+
+    document.getElementById('coinbase-check').style.display = "none";
+    document.getElementById("loading-gif").style.display = "block";
+
     var apiKey = document.getElementById('coinbaseApiKey').value;
     var apiSecret = document.getElementById('coinbaseApiSecret').value;
 
@@ -17,9 +21,13 @@ document.getElementById('submit-coinbase').addEventListener('click', async funct
     try {
         const data = await postCoinbaseKeys(apiKey, apiSecret);
         console.log('Success:', data);
+        document.getElementById("loading-gif").style.display = "none";
+        document.getElementById('coinbase-check').style.display = "block";
         //updateCoinbaseUI(data);
         document.getElementById("loaded").textContent = "Coinbase";
     } catch (error) {
+        document.getElementById("loading-gif").style.display = "none";
+        document.getElementById('coinbase-check').style.display = "none";
         alert(`Failed to update API keys: \n\n${error.message}`);
     }
 });

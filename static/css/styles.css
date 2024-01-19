@@ -151,6 +151,18 @@
 
 /* Submit Buttons */
 
+.submit-buttons {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.submit-buttons img {
+  margin-top: 50px;
+  height: 100px;
+  width: 100px;
+}
+
 .styled-button {
   /* Visual styles */
   padding: 10px 20px;
