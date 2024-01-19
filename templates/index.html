@@ -174,7 +174,7 @@
                   method="POST"
                   enctype="multipart/form-data"
                 >
-                  <label for="file" style="display:none;">File:</label>
+                  <label for="file" style="display: none">File:</label>
                   <br />
                   <input
                     type="file"
@@ -185,7 +185,9 @@
                   <br />
                   <!-- Custom label that triggers the file input -->
                   <label for="file" class="styled-button" id="file-label"
-                    >Choose File</label> <br>
+                    >Choose File</label
+                  >
+                  <br />
                   <!-- Place to display the file name -->
                   <span id="file-name"></span>
                 </form>
@@ -230,24 +232,24 @@
           </div>
         </div>
         <!-- add input tracker section, add view assets button  -->
-        <a href="">Show Assets</a>
+        <div class="show-assets-container" style="display:none;">
+          <a href="assets.html" id="assets" target="_blank" class="styled-button">Show Assets</a>
+        </div>
       </section>
     </main>
 
-    <footer>
+    <!-- <footer>
       <p>&copy; 2024 CoinConnect. All rights reserved.</p>
-    </footer>
+    </footer> -->
 
     <script>
-
-      document.getElementById('file').addEventListener('change', function() {
+      document.getElementById("file").addEventListener("change", function () {
         // Get the file name
         var fileName = this.files[0].name;
         // Set the text of the file-name element to the file name
-        document.getElementById('file-name').textContent = "File name: " + fileName;
+        document.getElementById("file-name").textContent =
+          "File name: " + fileName;
       });
-
-
 
       function showDiv(id) {
         // Hide all divs

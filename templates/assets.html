@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Assets</title>
+    <link rel="stylesheet" href="/static/css/global.css" />
+    <link rel="stylesheet" href="/static/css/about.css" />
+    <link rel="stylesheet" href="/static/css/assets.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">CoinConnect</div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="about.html" class="nav-item">About</a>
+          <a href="tutorials.html" class="nav-item">Tutorials</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="background">
+
+        <div class="no-content">
+            <h1><a href="/templates/index.html">Please link your accounts on the home page to view your assets.</a></h1>
+
+        </div>
+
+
+        <h1>Your Assets</h1>
+        <table id="assets-table">
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Balance</th>
+                <th>Real-Time Price</th>
+                <th>Exchanges with Asset</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JavaScript will insert rows here -->
+            </tbody>
+          </table>
+
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit,
+          accusantium enim itaque ea impedit omnis error maxime aut molestias
+          voluptas?
+        </p>
+      </div>
+    </main>
+
+    <script type="module" src="/static/js/assets.js"></script>
+  </body>
+</html>

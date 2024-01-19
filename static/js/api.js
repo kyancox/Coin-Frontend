@@ -2,6 +2,7 @@ async function postCoinbaseKeys(apiKey, apiSecret) {
     try {
         const response = await fetch('http://127.0.0.1:5000/api/coinbase/keys', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -30,6 +31,7 @@ async function postGeminiKeys(apiKey, apiSecret) {
     try {
         const response = await fetch('http://127.0.0.1:5000/api/gemini/keys', {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -59,6 +61,7 @@ async function uploadLedgerCSV(fileInput) {
     try {
         const response = await fetch('http://127.0.0.1:5000/api/ledger/upload-csv', {
             method: 'POST',
+            credentials: 'include',
             body: formData,
         });
 
@@ -107,10 +110,12 @@ async function fetchLedgerData() {
 
 async function fetchMasterData() {
     const response = await fetch('http://127.0.0.1:5000/api/master/json', {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching master portfolio data');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching master portfolio data.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }

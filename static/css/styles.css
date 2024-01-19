@@ -104,6 +104,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
+  padding-bottom: 100px;
 }
 
 .grid-header {
@@ -236,4 +237,16 @@ input[type="file"]:active::before {
   background-color: #e2d1c3; /* An even lighter shade when active/clicked */
   box-shadow: 0 2px #c2b1a1; /* Deeper shadow to simulate pressing */
   transform: translateY(2px);
+}
+
+/* Show Assets Container */
+
+.show-assets-container {
+  padding: 0 0 125px;
+}
+
+.show-assets-container a {
+  text-decoration: none;
+  font-size: 4em;
+  
 }

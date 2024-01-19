@@ -116,11 +116,15 @@ function updateLoadedAccounts(name, status) {
 
 
   const loaded = document.getElementById("loaded");
+  const assets = document.getElementsByClassName("show-assets-container")[0];
 
   if (loadedAccounts.length === 0) {
     loaded.style.display = "none";
+    assets.style.display = "none";
+
   } else if (loaded.style.display === "none") {
     loaded.style.display = "block";
+    assets.style.display = "block";
   }
 
   loaded.textContent = `Loaded: ${str}`; // Update text content
