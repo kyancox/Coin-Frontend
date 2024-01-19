@@ -177,24 +177,32 @@ async function fetchLedgerTotalBalance() {
 }
 
 async function downloadMasterXLSX() {
-    const response = await fetch('http://127.0.0.1:5000/api/master/download-xlsx', {
-        method: 'GET',
-        credentials: 'include'
-    });
-    if (!response.ok) {
-        throw new Error('Network response was not ok when downloading Master XLSX');
+    try {
+        const response = await fetch('http://127.0.0.1:5000/api/master/download-xlsx', {
+            method: 'GET',
+            credentials: 'include'
+        });
+
+        if (!response.ok) {
+            throw new Error(`Network response was not ok when downloading Master XLSX: ${response.statusText}`);
+        }
+
+        const blob = await response.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = downloadUrl;
+        a.download = 'master_portfolio.xlsx';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(downloadUrl);
+        alert('Download started successfully.');
+    } catch (error) {
+        console.error('Error downloading file:', error);
+        alert(`Failed to start download:\n\n${error.message}`);
     }
-    // Assuming you want to trigger a download in the browser:
-    const blob = await response.blob();
-    const downloadUrl = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = downloadUrl;
-    a.download = 'master_portfolio.xlsx';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(downloadUrl);
 }
+
 
 export {
     postCoinbaseKeys, 

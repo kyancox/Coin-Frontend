@@ -96,9 +96,29 @@ function formatBalance(balanceString) {
     }
   }
 
+// This function sets up the event listener for the download button
+function setupDownloadButton() {
+    const downloadBtn = document.getElementById('download-xlsx-button');
+    
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', async () => {
+            try {
+                await downloadMasterXLSX();
+                alert('Download started successfully.');
+            } catch (error) {
+                console.error('Error downloading file:', error);
+                alert(`Failed to start download:\n\n${error.message}`);
+            }
+        });
+    } else {
+        console.error('Download button not found.');
+    }
+}
+
 // Event listener for the portfolio dropdown
 document.addEventListener('DOMContentLoaded', () => {
     populateAssetsTable('master'); // Default to Master portfolio
+    setupDownloadButton();
 
     const portfolioSelect = document.getElementById('portfolio-select');
     portfolioSelect.addEventListener('change', () => {

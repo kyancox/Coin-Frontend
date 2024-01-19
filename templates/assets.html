@@ -6,7 +6,8 @@
     <title>View Assets</title>
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/about.css" />
-    <link rel="stylesheet" href="/static/css/assets.css">
+    <link rel="stylesheet" href="/static/css/assets.css" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
     <header>
@@ -22,24 +23,35 @@
 
     <main>
       <div class="background">
-
         <div class="no-content">
-            <h1><a href="/templates/index.html">Please link your accounts on the home page to view your assets.</a></h1>
-
+          <h1>
+            <a href="/templates/index.html"
+              >Please link your accounts on the home page to view your
+              assets.</a
+            >
+          </h1>
         </div>
 
-        <div class="portfolio-dropdown">
-            <label for="portfolio-select">Choose a portfolio:</label>
-            <select id="portfolio-select">
-              <option value="master">Master</option>
-              <option value="coinbase">Coinbase</option>
-              <option value="ledger">Ledger</option>
-              <option value="gemini">Gemini</option>
-            </select>
+        <div class="assets" id="assets">
+          <h1 id="assets-header">Your Assets</h1>
+
+          <div class="header-container">
+            <div class="portfolio-dropdown">
+              <label for="portfolio-select">Choose a portfolio:</label>
+              <select id="portfolio-select">
+                <option value="master">Master</option>
+                <option value="coinbase">Coinbase</option>
+                <option value="ledger">Ledger</option>
+                <option value="gemini">Gemini</option>
+              </select>
+            </div>
+
+            <button id="download-xlsx-button" class="styled-button">
+              Download Master XLSX
+            </button>
           </div>
 
-        <h1 id="assets-header">Your Assets</h1>
-        <table id="assets-table">
+          <table id="assets-table">
             <thead>
               <tr>
                 <th>Symbol</th>
@@ -54,12 +66,7 @@
               <!-- JavaScript will insert rows here -->
             </tbody>
           </table>
-
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit,
-          accusantium enim itaque ea impedit omnis error maxime aut molestias
-          voluptas?
-        </p>
+        </div>
       </div>
     </main>
 
