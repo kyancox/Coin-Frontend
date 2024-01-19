@@ -80,30 +80,36 @@ async function uploadLedgerCSV(fileInput) {
 
 async function fetchCoinbaseData() {
     const response = await fetch('http://127.0.0.1:5000/api/coinbase/json', {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Coinbase data');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Coinbase portfolio data.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
 
 async function fetchGeminiData() {
     const response = await fetch('http://127.0.0.1:5000/api/gemini/json', {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Gemini data');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Gemini portfolio data.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
 
 async function fetchLedgerData() {
     const response = await fetch('http://127.0.0.1:5000/api/ledger/json', {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Ledger data');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Ledger portfolio data.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
@@ -122,10 +128,12 @@ async function fetchMasterData() {
 
 async function fetchMasterTotalBalance() {
     const response = await fetch('http://127.0.0.1:5000/api/master/total-balance', {
-        method: 'GET'
+        method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching master total balance');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Master total balance.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
@@ -135,9 +143,11 @@ async function fetchMasterTotalBalance() {
 async function fetchCoinbaseTotalBalance() {
     const response = await fetch('/api/coinbase/total-balance', {
         method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Coinbase total balance');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Coinbase total balance.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
@@ -145,9 +155,11 @@ async function fetchCoinbaseTotalBalance() {
 async function fetchGeminiTotalBalance() {
     const response = await fetch('/api/gemini/total-balance', {
         method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Gemini total balance');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Gemini total balance.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
@@ -155,9 +167,11 @@ async function fetchGeminiTotalBalance() {
 async function fetchLedgerTotalBalance() {
     const response = await fetch('/api/ledger/total-balance', {
         method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
-        throw new Error('Network response was not ok when fetching Ledger total balance');
+        const errorData = await response.json();
+        throw new Error(`Network response was not ok when fetching Ledger total balance.\nError ${response.status}: ${errorData.message}`);
     }
     return await response.json();
 }
@@ -165,6 +179,7 @@ async function fetchLedgerTotalBalance() {
 async function downloadMasterXLSX() {
     const response = await fetch('/api/master/download-xlsx', {
         method: 'GET',
+        credentials: 'include'
     });
     if (!response.ok) {
         throw new Error('Network response was not ok when downloading Master XLSX');
