@@ -149,6 +149,52 @@
   border: none;
 }
 
+/* Hides the default file input button styling */
+input[type="file"] {
+  color: transparent;
+}
+
+/* Custom styles */
+input[type="file"]::before {
+  content: 'Choose File';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+  user-select: none;         /* Standard syntax */
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  color:black;
+}
+
+/* Changes the text color back from transparent to default (usually black) on hover */
+input[type="file"]:hover::before {
+  border-color: black;
+}
+
+/* Use :active pseudo-class to change styles when the input is clicked */
+input[type="file"]:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+#file-label {
+  font-size: 1em;
+}
+
+#file-name {
+  font-size: .5em;
+  padding-left: 10px; 
+  color: black;
+}
+
 /* Submit Buttons */
 
 .submit-buttons {
@@ -170,13 +216,14 @@
   color: #5c5148; /* A darker shade for the text for better readability */
   border: 2px solid #e2d1c3; /* A border that's slightly darker than the button's background */
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 2em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
   box-shadow: 0 4px #d3c2b2; /* Shadow with a color that complements the button background */
   transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 /* Interactive states */

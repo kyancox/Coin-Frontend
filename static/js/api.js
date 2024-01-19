@@ -57,7 +57,7 @@ async function uploadLedgerCSV(fileInput) {
     formData.append('file', fileInput.files[0]);
 
     try {
-        const response = await fetch('/api/ledger/upload-csv', {
+        const response = await fetch('http://127.0.0.1:5000/api/ledger/upload-csv', {
             method: 'POST',
             body: formData,
         });

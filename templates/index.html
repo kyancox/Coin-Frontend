@@ -174,16 +174,27 @@
                   method="POST"
                   enctype="multipart/form-data"
                 >
-                  <label for="file">File:</label>
+                  <label for="file" style="display:none;">File:</label>
                   <br />
-                  <input type="file" id="file" name="file" /> <br />
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    style="display: none"
+                  />
+                  <br />
+                  <!-- Custom label that triggers the file input -->
+                  <label for="file" class="styled-button" id="file-label"
+                    >Choose File</label> <br>
+                  <!-- Place to display the file name -->
+                  <span id="file-name"></span>
                 </form>
               </div>
             </div>
           </div>
 
           <div class="submit-buttons">
-            <h3 id="loaded" style="display:none;">Loaded:</h3>
+            <h3 id="loaded" style="display: none">Loaded: None</h3>
             <input
               type="submit"
               value="Set Coinbase Keys"
@@ -205,8 +216,17 @@
             >
               Upload
             </button>
-            <img src="/static/images/loading.gif" id="loading-gif" style="display:none;" alt="">
-            <img src="/static/images/checkmark.png" id="check" style="display:none;">
+            <img
+              src="/static/images/loading.gif"
+              id="loading-gif"
+              style="display: none"
+              alt=""
+            />
+            <img
+              src="/static/images/checkmark.png"
+              id="check"
+              style="display: none"
+            />
           </div>
         </div>
         <!-- add input tracker section, add view assets button  -->
@@ -219,6 +239,16 @@
     </footer>
 
     <script>
+
+      document.getElementById('file').addEventListener('change', function() {
+        // Get the file name
+        var fileName = this.files[0].name;
+        // Set the text of the file-name element to the file name
+        document.getElementById('file-name').textContent = "File name: " + fileName;
+      });
+
+
+
       function showDiv(id) {
         // Hide all divs
         document.getElementById("connect-coinbase").style.display = "none";

@@ -8,6 +8,7 @@ var accountState = {
   ledger: false
 };
 
+// COINBASE Submit Event Listener
 document.getElementById('submit-coinbase').addEventListener('click', async function(event) {
     event.preventDefault();
 
@@ -20,6 +21,7 @@ document.getElementById('submit-coinbase').addEventListener('click', async funct
     // Check if either input is empty
     if (!apiKey || !apiSecret) {
       console.log('API Key or API Secret not entered.')
+      document.getElementById("loading-gif").style.display = "none";
       alert('Please enter both the API Key and the API Secret.');
       return; 
     }
@@ -39,6 +41,7 @@ document.getElementById('submit-coinbase').addEventListener('click', async funct
     }
 });
 
+// GEMINI Submit Event Listener
 document.getElementById('submit-gemini').addEventListener('click',  async function(event) {
   event.preventDefault();
 
@@ -50,6 +53,7 @@ document.getElementById('submit-gemini').addEventListener('click',  async functi
 
   // Check if either input is empty
   if (!apiKey || !apiSecret) {
+    document.getElementById("loading-gif").style.display = "none";
     alert('Please enter both the API Key and the API Secret.');
     return; 
   }
@@ -69,6 +73,7 @@ document.getElementById('submit-gemini').addEventListener('click',  async functi
   }
 });
 
+// LEDGER Submit Event Listener
 document.getElementById('submit-ledger').addEventListener('click', async function(event) {
     event.preventDefault();
     var fileInput = document.getElementById('file'); // Reference to the file input
@@ -94,7 +99,6 @@ document.getElementById('submit-ledger').addEventListener('click', async functio
     } else {
         console.error('No file selected.');
         document.getElementById("loading-gif").style.display = "none";
-        updateLoadedAccounts('ledger', false);
         alert('No file selected. Please select a file to upload.');
     }
 });
@@ -110,9 +114,12 @@ function updateLoadedAccounts(name, status) {
       return account.charAt(0).toUpperCase() + account.slice(1); // Capitalize account names
   }).join(', ');
 
+
   const loaded = document.getElementById("loaded");
-  
-  if (loaded.style.display === "none") {
+
+  if (loadedAccounts.length === 0) {
+    loaded.style.display = "none";
+  } else if (loaded.style.display === "none") {
     loaded.style.display = "block";
   }
 
