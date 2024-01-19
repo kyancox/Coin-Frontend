@@ -56,15 +56,24 @@ async function uploadLedgerCSV(fileInput) {
     const formData = new FormData();
     formData.append('file', fileInput.files[0]);
 
-    const response = await fetch('/api/ledger/upload-csv', {
-        method: 'POST',
-        body: formData,
-    });
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
+    try {
+        const response = await fetch('/api/ledger/upload-csv', {
+            method: 'POST',
+            body: formData,
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(`Error ${response.status}: ${errorData.message || 'Failed to upload file'}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error during file upload:', error);
+        throw error; // Rethrow the error so the caller can handle it
     }
-    return await response.json();
 }
+
 
 async function fetchCoinbaseData() {
     const response = await fetch('http://127.0.0.1:5000/api/coinbase/json', {

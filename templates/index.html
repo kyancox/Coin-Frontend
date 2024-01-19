@@ -183,6 +183,7 @@
           </div>
 
           <div class="submit-buttons">
+            <h3 id="loaded" style="display:none;">Loaded:</h3>
             <input
               type="submit"
               value="Set Coinbase Keys"
@@ -205,13 +206,10 @@
               Upload
             </button>
             <img src="/static/images/loading.gif" id="loading-gif" style="display:none;" alt="">
-            <img src="/static/images/checkmark.png" id="coinbase-check" style="display:none;">
-            <img src="/static/images/checkmark.png" id="gemini-check" style="display:none;">
-            <img src="/static/images/checkmark.png" id="ledger-check" style="display:none;">
+            <img src="/static/images/checkmark.png" id="check" style="display:none;">
           </div>
         </div>
         <!-- add input tracker section, add view assets button  -->
-        <h3 id="loaded">Loaded:</h3>
         <a href="">Show Assets</a>
       </section>
     </main>
@@ -230,6 +228,7 @@
         document.getElementById("submit-gemini").style.display = "none";
         document.getElementById("submit-ledger").style.display = "none";
         document.getElementsByClassName("tutorials")[0].style.display = "none";
+        document.getElementById("check").style.display = "none";
 
         accountName = id.charAt(0).toUpperCase() + id.slice(1);
 
