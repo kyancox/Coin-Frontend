@@ -141,7 +141,7 @@ async function fetchMasterTotalBalance() {
 // Add these functions to your api.js module
 
 async function fetchCoinbaseTotalBalance() {
-    const response = await fetch('/api/coinbase/total-balance', {
+    const response = await fetch('http://127.0.0.1:5000/api/coinbase/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -153,7 +153,7 @@ async function fetchCoinbaseTotalBalance() {
 }
 
 async function fetchGeminiTotalBalance() {
-    const response = await fetch('/api/gemini/total-balance', {
+    const response = await fetch('http://127.0.0.1:5000/api/gemini/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -165,7 +165,7 @@ async function fetchGeminiTotalBalance() {
 }
 
 async function fetchLedgerTotalBalance() {
-    const response = await fetch('/api/ledger/total-balance', {
+    const response = await fetch('http://127.0.0.1:5000/api/ledger/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -177,7 +177,7 @@ async function fetchLedgerTotalBalance() {
 }
 
 async function downloadMasterXLSX() {
-    const response = await fetch('/api/master/download-xlsx', {
+    const response = await fetch('http://127.0.0.1:5000/api/master/download-xlsx', {
         method: 'GET',
         credentials: 'include'
     });

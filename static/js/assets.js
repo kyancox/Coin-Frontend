@@ -15,24 +15,34 @@ async function populateAssetsTable(portfolioType) {
     try {
         console.log('Populating assets.')
         let data;
+        let balance;
         switch(portfolioType) {
             case 'coinbase':
                 data = await fetchCoinbaseData();
+                balance = await fetchCoinbaseTotalBalance();
                 break;
             case 'gemini':
                 data = await fetchGeminiData();
+                balance = await fetchGeminiTotalBalance();
                 break;
             case 'ledger':
                 data = await fetchLedgerData();
+                balance = await fetchLedgerTotalBalance();
                 break;
             case 'master':
             default:
                 data = await fetchMasterData();
+                balance = await fetchMasterTotalBalance();
         }
 
         console.log(data);
         const tableHead = document.getElementById('assets-table').querySelector('thead tr');
         const tableBody = document.getElementById('assets-table').querySelector('tbody');
+        const header = document.getElementById('assets-header');
+        let portfolioName = portfolioType.charAt(0).toUpperCase() + portfolioType.slice(1);
+
+        balance = `$${formatBalance(balance.balance)} USD`
+        header.textContent = `${portfolioName} Portfolio (Total Balance: ${balance})`;
 
         // Update table headers based on the portfolio type
         tableHead.innerHTML = `
@@ -73,6 +83,18 @@ async function populateAssetsTable(portfolioType) {
         alert(`Failed to load assets into table:\n\n${error.message}`);
     }
 }
+
+function formatBalance(balanceString) {
+    const pattern = /[\d,]+.\d+/; // Regular expression to find the number in the string
+    const matches = balanceString.match(pattern);
+    if (matches && matches[0]) {
+      const number = parseFloat(matches[0].replace(/,/g, '')); // Remove commas for thousands
+      return number.toFixed(2); // Convert to string with 2 decimal places
+    } else {
+      console.error('Invalid balance format');
+      return '0.00'; // Return a default or error value
+    }
+  }
 
 // Event listener for the portfolio dropdown
 document.addEventListener('DOMContentLoaded', () => {
