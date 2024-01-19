@@ -231,6 +231,12 @@
         document.getElementById("submit-ledger").style.display = "none";
         document.getElementsByClassName("tutorials")[0].style.display = "none";
 
+        // Call updateCheckmarks to adjust checkmark visibility
+        if (typeof window.updateCheckmarks === 'function') {
+          window.updateCheckmarks();
+        }
+
+
         accountName = id.charAt(0).toUpperCase() + id.slice(1);
 
         // Show the selected div

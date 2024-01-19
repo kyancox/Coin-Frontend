@@ -1,36 +1,48 @@
 import { postCoinbaseKeys, postGeminiKeys, uploadLedgerCSV, fetchCoinbaseData, fetchGeminiData, fetchLedgerData } from './api.js';
+import accountsState from './accountsState.js';
+window.accountsState = accountsState;
 //import { updateCoinbaseUI, updateGeminiUI, updateLedgerUI } from './ui.js';
+
+const showCheckmark = (account) => {
+  const checkmarkElement = document.getElementById(`${account}-checkmark`);
+  if (checkmarkElement) {
+    checkmarkElement.style.display = accountsState.isAccountLoaded(account) ? 'block' : 'none';
+  }
+};
 
 
 document.getElementById('submit-coinbase').addEventListener('click', async function(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    document.getElementById('coinbase-check').style.display = "none";
-    document.getElementById("loading-gif").style.display = "block";
+  var apiKey = document.getElementById('coinbaseApiKey').value;
+  var apiSecret = document.getElementById('coinbaseApiSecret').value;
 
-    var apiKey = document.getElementById('coinbaseApiKey').value;
-    var apiSecret = document.getElementById('coinbaseApiSecret').value;
+  // Check if either input is empty
+  if (!apiKey || !apiSecret) {
+    console.log('API Key or API Secret not entered.')
+    alert('Please enter both the API Key and the API Secret.');
+    return; 
+  }
 
-    // Check if either input is empty
-    if (!apiKey || !apiSecret) {
-      console.log('API Key or API Secret not entered.')
-      alert('Please enter both the API Key and the API Secret.');
-      return; 
-    }
-  
-    try {
-        const data = await postCoinbaseKeys(apiKey, apiSecret);
-        console.log('Success:', data);
-        document.getElementById("loading-gif").style.display = "none";
-        document.getElementById('coinbase-check').style.display = "block";
-        //updateCoinbaseUI(data);
-        document.getElementById("loaded").textContent = "Coinbase";
-    } catch (error) {
-        document.getElementById("loading-gif").style.display = "none";
-        document.getElementById('coinbase-check').style.display = "none";
-        alert(`Failed to update API keys: \n\n${error.message}`);
-    }
+  document.getElementById('coinbase-check').style.display = "none";
+  document.getElementById("loading-gif").style.display = "block";
+
+  try {
+      const data = await postCoinbaseKeys(apiKey, apiSecret);
+      console.log('Success:', data);
+      document.getElementById("loading-gif").style.display = "none";
+      accountsState.setAccountLoaded('coinbase', true);
+      updateCheckmarks();
+      // updateCoinbaseUI(data); (if needed)
+      document.getElementById("loaded").textContent = "Coinbase";
+  } catch (error) {
+      document.getElementById("loading-gif").style.display = "none";
+      accountsState.setAccountLoaded('coinbase', false);
+      updateCheckmarks();
+      alert(`Failed to update API keys: \n\n${error.message}`);
+  }
 });
+
 
 document.getElementById('submit-gemini').addEventListener('click',  async function(event) {
   event.preventDefault();
@@ -80,3 +92,14 @@ document.getElementById('submit-ledger').addEventListener('click', async functio
     }
 });
 
+function updateCheckmarks() {
+  const accounts = ['coinbase', 'gemini', 'ledger'];
+  accounts.forEach(account => {
+      document.getElementById(`${account}-check`).style.display = accountsState.isAccountLoaded(account) ? 'block' : 'none';
+  });
+}
+
+window.updateCheckmarks = updateCheckmarks;
+
+// Call updateCheckmarks to initialize checkmarks state
+updateCheckmarks();
