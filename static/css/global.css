@@ -5,43 +5,93 @@ body {
   height: 100%;
   font-family: "Ubuntu", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  background-color: beige;
+  background-color: #e7e7d9;
 }
 
-/* Nav-Bar */
+/* New Nav-Bar */
 
-.navbar {
-  display: flex;
+header li, a, button {
+  /* color: #edf0f1; */
+  /* color: #020035; */
+  color: #e7e7d9;
+  text-decoration: none;
+}
+
+header { 
+  display: flex; 
   justify-content: space-between;
   align-items: center;
   background-color: #020035;
-  color: white;
-  padding: 0 2%; /* Adjust padding for spacing */
-  padding-top: 15px;
-  padding-bottom: 15px;
+  /* background-color: #e7e7d9; */
+
 }
 
-.logo {
-  color:rgb(245, 245, 71);
-  font-size: 1.75rem; /* Adjust size as needed */
-  font-weight: bold;
+.logo-container {
+  cursor: pointer;
+  /* background-color: #e7e7d9; */
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.logo-container:hover h1 {
+  transition: all 0.3s ease 0s;
+  color: #0088a9;
+}
+
+.logo-container img{
+  display: inline-block;
+  margin-bottom: -25px;
+  width: 75px;
+  height: 75px;
+}
+
+.logo-container h1 {
+  display: inline-block;
+  color: #e7e7d9;
+  margin-left: -10px;
 }
 
 .nav-links {
-  margin-right: 125px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* Allows the nav links to take up the remaining space */
+  list-style: none;
+  font-size: 2rem;
+  margin-left: -200px; 
 }
 
-.nav-item {
-  text-decoration: none;
-  color: white;
-  margin: 0 100px; /* Adjust margin for spacing between links */
-  font-size: 1.5rem; /* Adjust font size as needed */
+.nav-links li {
+  display: inline-block;
+  padding: 0px 75px;
 }
 
-.nav-item:hover {
-  text-decoration: underline;
+.nav-links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+  color: #0088a9
+}
+
+header button {
+  padding: 10px 20px;
+  background-color: #e7e7d9;
+  color: #020035;
+  font-size: 1.75rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  font-family: "Ubuntu", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  margin-right: 50px;
+}
+
+header button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Footer */
+
+footer {
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }

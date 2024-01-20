@@ -7,7 +7,7 @@ body {
     "Lucida Sans", Arial, sans-serif;
   background: url(/static/images/background.jpeg) no-repeat center center fixed;
   background-size: cover;
-  background-color: beige;
+  background-color: #e7e7d9;
 }
 
 .background {
