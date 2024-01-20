@@ -12,6 +12,7 @@
 .assets {
   padding: 20px;
   overflow-x: auto; /* Allows table to scroll on small screens */
+  height: 100vh;
 }
 
 #assets-header {

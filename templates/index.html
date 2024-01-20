@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoinCollection</title>
     <link rel="icon" href="/static/images/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="/static/images/favicon.png"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,7 +34,10 @@
           <li><a href="/templates/tutorials.html">Tutorials</a></li>
         </ul>
       </nav>
-      <a href="https://www.linkedin.com/in/kyancox/" target="_blank" class="contact"
+      <a
+        href="https://www.linkedin.com/in/kyancox/"
+        target="_blank"
+        class="contact"
         ><button>Contact</button></a
       >
     </header>
@@ -109,13 +116,37 @@
           <div class="tutorials" style="display: none">
             <h3 class="grid-header" id="tutorial-text">Tutorial for :</h3>
             <iframe
-              width="1280"
-              height="712"
-              src="https://www.youtube.com/embed/f66lxniu0Ks"
-              title="Big.Buck.Bunny sample"
+              width="1157"
+              height="752"
+              src="https://www.youtube.com/embed/dAMbJCXZwmk"
+              title="Coinbase API Key Creation Tutorial"
               frameborder="0"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
+              id="coinbase-tutorial"
+              style="display:none;"
+            ></iframe>
+            <iframe
+              width="1157"
+              height="752"
+              src="https://www.youtube.com/embed/sDlLeiEEyWk"
+              title="Gemini API Key Creation Tutorial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              id="gemini-tutorial"
+              style="display:none;"
+            ></iframe>
+            <iframe
+              width="1157"
+              height="752"
+              src="https://www.youtube.com/embed/2mLfz2RfbAI"
+              title="Ledger Live Operations CSV Tutorial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              id="ledger-tutorial"
+              style="display:none;"
             ></iframe>
           </div>
 
@@ -276,6 +307,9 @@
         document.getElementById("submit-gemini").style.display = "none";
         document.getElementById("submit-ledger").style.display = "none";
         document.getElementsByClassName("tutorials")[0].style.display = "none";
+        document.getElementById("coinbase-tutorial").style.display = "none";
+        document.getElementById("gemini-tutorial").style.display = "none";
+        document.getElementById("ledger-tutorial").style.display = "none";
         document.getElementById("check").style.display = "none";
 
         accountName = id.charAt(0).toUpperCase() + id.slice(1);
@@ -294,6 +328,7 @@
           "Enter " + accountName + " information below:";
         // Show tutorial block
         document.getElementsByClassName("tutorials")[0].style.display = "block";
+        document.getElementById(id+'-tutorial').style.display = "block";
         // Show submit button
         document.getElementById("submit-" + id).style.display = "block";
       }

@@ -215,7 +215,7 @@ input[type="file"]:active::before {
   /* Visual styles */
   padding: 10px 20px;
   background-color: #f0e6d2; /* A very light #e7e7d9, similar to default #e7e7d9 */
-  color: #5c5148; /* A darker shade for the text for better readability */
+  color:#020035ea;
   border: 2px solid #e2d1c3; /* A border that's slightly darker than the button's background */
   border-radius: 5px;
   font-size: 2em;

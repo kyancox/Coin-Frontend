@@ -16,26 +16,26 @@ body {
     255,
     255,
     .95
-  ); /* Semi-transparent white background for better readability */
-  color: #333; /* Dark grey color for text for better contrast */
+  ); 
+  color: #333; 
   padding: 2%;
-  margin: 0 10% 0 10%; /* Adjusted margin for a centered look */
-  border-radius: 10px; /* Rounded corners for a smoother look */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  overflow: hidden; /* Ensures no content spills out */
+  margin: 0 10% 0 10%; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  overflow: hidden; 
 }
 
 .github {
   display: flex;
-  justify-content: center; /* Aligns horizontally in the center */
-  align-items: center; /* Aligns vertically in the center */
+  justify-content: center; 
+  align-items: center;
   background-color: #8b949e;
   padding: 10px 20px;
-  margin: 20px auto; /* Vertical margins of 20px and auto horizontal margins to center the div */
+  margin: 20px auto;
   margin-bottom: 50px;
-  width: fit-content; /* Sets the width to the content of the button */
-  border-radius: 4px; /* Optional: Adds rounded corners to the div */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow for a 3D effect */
+  width: fit-content;
+  border-radius: 4px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 .github a {
@@ -44,16 +44,16 @@ body {
     font-weight: bold;
     font-size: 3rem;
     display: block;
-    margin: 0; /* Reset margin to ensure the scaling doesn't affect the layout */
-    padding: 0; /* Reset padding since it's now on the parent container */
+    margin: 0; 
+    padding: 0;
   }
   
-  .github:hover { /* Apply the hover effect to the .github container instead of the <a> tag */
-    background-color: #57606a; /* Darker shade of the button color for hover */
-    transform: scale(1.05); /* Slightly increase the scale to give a popping effect */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and transform */
-    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
-    border-radius: 4px; /* Maintain the rounded corners on hover */
+  .github:hover { 
+    background-color: #57606a; 
+    transform: scale(1.05); 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer;
+    border-radius: 4px; 
   }
 
 .background h1 {
@@ -61,13 +61,13 @@ body {
   font-size: 2.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  color: #0056b3; /* A color that stands out */
+  color: #0056b3; 
   font-family: "Ubuntu", sans-serif;
 }
 
 .background h2 {
-  font-size: 1.75em; /* Slightly smaller than h1 for hierarchy */
-  color: #004080; /* A slightly darker shade for subheadings */
+  font-size: 1.75em;
+  color: #004080; 
 }
 
 .background p {
@@ -82,6 +82,6 @@ body {
 /* Media query for responsiveness */
 @media (max-width: 768px) {
   .background {
-    margin: 0 5%; /* Less margin for smaller screens */
+    margin: 0 5%; 
   }
 }
