@@ -1,6 +1,6 @@
 async function postCoinbaseKeys(apiKey, apiSecret) {
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/coinbase/keys', {
+        const response = await fetch('https://coinconnectapi.onrender.com/api/coinbase/keys', {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -29,7 +29,7 @@ async function postCoinbaseKeys(apiKey, apiSecret) {
 async function postGeminiKeys(apiKey, apiSecret) {
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/gemini/keys', {
+        const response = await fetch('https://coinconnectapi.onrender.com/api/gemini/keys', {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -59,7 +59,7 @@ async function uploadLedgerCSV(fileInput) {
     formData.append('file', fileInput.files[0]);
 
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/ledger/upload-csv', {
+        const response = await fetch('https://coinconnectapi.onrender.com/api/ledger/upload-csv', {
             method: 'POST',
             credentials: 'include',
             body: formData,
@@ -79,7 +79,7 @@ async function uploadLedgerCSV(fileInput) {
 
 
 async function fetchCoinbaseData() {
-    const response = await fetch('http://127.0.0.1:5000/api/coinbase/json', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/coinbase/json', {
         method: 'GET',
         credentials: 'include'
     });
@@ -91,7 +91,7 @@ async function fetchCoinbaseData() {
 }
 
 async function fetchGeminiData() {
-    const response = await fetch('http://127.0.0.1:5000/api/gemini/json', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/gemini/json', {
         method: 'GET',
         credentials: 'include'
     });
@@ -103,7 +103,7 @@ async function fetchGeminiData() {
 }
 
 async function fetchLedgerData() {
-    const response = await fetch('http://127.0.0.1:5000/api/ledger/json', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/ledger/json', {
         method: 'GET',
         credentials: 'include'
     });
@@ -115,7 +115,7 @@ async function fetchLedgerData() {
 }
 
 async function fetchMasterData() {
-    const response = await fetch('http://127.0.0.1:5000/api/master/json', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/master/json', {
         method: 'GET',
         credentials: 'include'
     });
@@ -127,7 +127,7 @@ async function fetchMasterData() {
 }
 
 async function fetchMasterTotalBalance() {
-    const response = await fetch('http://127.0.0.1:5000/api/master/total-balance', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/master/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -141,7 +141,7 @@ async function fetchMasterTotalBalance() {
 // Add these functions to your api.js module
 
 async function fetchCoinbaseTotalBalance() {
-    const response = await fetch('http://127.0.0.1:5000/api/coinbase/total-balance', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/coinbase/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -153,7 +153,7 @@ async function fetchCoinbaseTotalBalance() {
 }
 
 async function fetchGeminiTotalBalance() {
-    const response = await fetch('http://127.0.0.1:5000/api/gemini/total-balance', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/gemini/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -165,7 +165,7 @@ async function fetchGeminiTotalBalance() {
 }
 
 async function fetchLedgerTotalBalance() {
-    const response = await fetch('http://127.0.0.1:5000/api/ledger/total-balance', {
+    const response = await fetch('https://coinconnectapi.onrender.com/api/ledger/total-balance', {
         method: 'GET',
         credentials: 'include'
     });
@@ -178,7 +178,7 @@ async function fetchLedgerTotalBalance() {
 
 async function downloadMasterXLSX() {
     try {
-        const response = await fetch('http://127.0.0.1:5000/api/master/download-xlsx', {
+        const response = await fetch('https://coinconnectapi.onrender.com/api/master/download-xlsx', {
             method: 'GET',
             credentials: 'include'
         });
