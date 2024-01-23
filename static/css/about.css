@@ -79,9 +79,23 @@ body {
   font-family: "Libre Franklin", sans-serif;
 }
 
-/* Media query for responsiveness */
 @media (max-width: 768px) {
   .background {
     margin: 0 5%; 
   }
+}
+
+@media only screen and (max-width: 430px) and (orientation: portrait) {
+  * {
+    font-size: .75rem;
+  }
+
+  .github {
+    margin-bottom: 0;
+  }
+
+  .github a{
+    font-size: 2em;
+  }
+
 }
