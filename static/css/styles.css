@@ -4,32 +4,32 @@
   background: url(/static/images/background.jpeg);
   background-size: cover;
   background-position: center;
-  padding-top: 50px;
-  padding-bottom: 75px;
-  padding-left: 50px;
+  padding-top: 3rem;
+  padding-bottom: 4.5rem;
+  padding-left: 3rem;
   margin-bottom: 0;
   color: #e7e7d9;
   font-weight: bolder;
 }
 
 .welcome-text {
-  margin-bottom: 50px;
+  margin-bottom: 3rem;
 }
 
 .welcome-text h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 .welcome-text p {
   width: 32%;
-  font-size: 35px;
+  font-size: 2.2rem;
 }
 
 .exchange-name {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 2.2rem;
 }
 
 .exchange-name:hover {
@@ -38,15 +38,15 @@
 
 #learn {
   float: right;
-  margin-right: 175px;
-  margin-top: -80px;
-  font-size: 35px;
+  margin-right: 10%;
+  margin-top: -5rem;
+  font-size: 2.2rem;
   background-color: #f5f5f5;
-  padding: 30px;
+  padding: 2rem;
   text-decoration: none;
   color: #020035;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 1.5rem;
 }
 
 #learn:hover {
@@ -62,17 +62,17 @@
   text-align: center;
   background-color: white;
   color: #020035;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .connect-section h2 {
-  font-size: 35px;
-  margin-bottom: 20px;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
 }
 #instructions {
-  margin-top: 20px;
-  font-size: 25px;
-  margin-bottom: 5px;
+  margin-top: 1.25rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
 }
 
 .connect-accounts {
@@ -250,4 +250,27 @@ input[type="file"]:active::before {
   text-decoration: none;
   font-size: 4em;
   
+}
+
+@media only screen and (max-width: 430px) and (orientation: portrait) {
+
+.welcome-text p::after{
+  content: "For full website functionality, please view coinmerge.co on your computer.";
+}
+
+.welcome {
+  font-size: 1em;
+}
+
+.welcome-text p {
+  width: 100%;
+}
+
+#learn {
+display: none;
+}
+
+.connect-section {
+  display:none;
+}
 }
