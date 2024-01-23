@@ -97,7 +97,7 @@ footer {
   padding: 0.625rem;
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 430px) and (orientation: portrait) {
   * {
     font-size: 1rem;
   }
@@ -135,4 +135,36 @@ footer {
     margin-right: 0;
   }
   
+}
+
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+  * {
+    font-size: 1.1rem;
+  }
+
+  header {
+    padding-bottom: .5rem;
+  }
+
+  .logo-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    margin: 0 auto;
+  }
+
+  .nav-links li{
+    padding: 0px 1rem;
+    margin-right: 0;
+  }
+
+  header a button {
+    font-size: 1rem;
+  }
+  
+  header button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }
