@@ -90,6 +90,10 @@ body {
     font-size: .75rem;
   }
 
+  .background {
+    padding: 0 2rem;
+  }
+
   .github {
     margin-bottom: 0;
   }
