@@ -259,7 +259,11 @@ input[type="file"]:active::before {
 }
 
 .welcome {
+  background: #1c79c0;
   font-size: 1em;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
 }
 
 .welcome-text p {
