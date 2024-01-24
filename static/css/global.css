@@ -229,6 +229,35 @@ footer {
   }
 
 }
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+
+  header {
+    padding-bottom: .5rem;
+  }
+
+  .logo-container a h1 {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    margin: 0 auto;
+  }
+
+  .nav-links li a{
+    padding: 0;
+    margin-right: 0;
+    font-size: 1rem;
+  }
+
+  header a button {
+    font-size: 1rem;
+  }
+  
+  header button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
 
 @media only screen and (max-width: 932px) and (orientation: landscape) {
 
