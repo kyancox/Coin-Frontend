@@ -98,9 +98,6 @@ footer {
 }
 
 @media only screen and (max-width: 430px) and (orientation: portrait) {
-  * {
-    font-size: 1rem;
-  }
 
   header a button{
     display: none;
@@ -234,9 +231,7 @@ footer {
 }
 
 @media only screen and (max-width: 932px) and (orientation: landscape) {
-  * {
-    font-size: 1.1rem;
-  }
+
 
   header {
     padding-bottom: .5rem;
