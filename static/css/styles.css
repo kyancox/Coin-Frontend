@@ -279,3 +279,47 @@ display: none;
 }
 
 }
+
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+
+  .connect-accounts {
+    padding-left: 1rem;
+    padding-right: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.5rem;
+  }
+  
+  .welcome-text a {
+    font-size: 1.5rem;
+  }
+
+  #learn {
+    font-size: 1.5rem;
+  }
+
+  .tutorials iframe {
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .grid-header {
+    font-size: 1.1rem;
+  }
+
+  .text-input {
+    font-size: 1rem;
+  }
+
+  .accounts form {
+    margin-top: 0;
+  }
+
+  .submit-buttons {
+    font-size: .5rem;
+  }
+
+
+}
