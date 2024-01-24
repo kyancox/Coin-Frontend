@@ -137,6 +137,102 @@ footer {
   
 }
 
+@media only screen and (max-width: 697px) and (orientation: landscape) {
+
+  header {
+    padding-bottom: .5rem;
+  }
+
+  .logo-container a h1 {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    margin: 0 auto;
+  }
+
+  .nav-links li{
+    padding: 0;
+    margin-right: 0;
+  }
+
+  .nav-links li a {
+    font-size: .1rem;
+  }
+
+  header a button {
+    font-size: 1rem;
+  }
+  
+  header button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 751px) and (orientation: landscape) {
+
+  header {
+    padding-bottom: .5rem;
+  }
+
+  .logo-container a h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    margin: 0 auto;
+  }
+
+  .nav-links li{
+    padding: 0px 1rem;
+    margin-right: 0;
+  }
+
+  header a button {
+    font-size: 1rem;
+  }
+  
+  header button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 729px) and (orientation: landscape) {
+
+  header {
+    padding-bottom: .5rem;
+  }
+
+  .logo-container a h1 {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    margin: 0 auto;
+  }
+
+  .nav-links li a{
+    padding: 0;
+    margin-right: 0;
+    font-size: 1rem;
+  }
+
+  header a button {
+    font-size: 1rem;
+  }
+  
+  header button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
 @media only screen and (max-width: 932px) and (orientation: landscape) {
   * {
     font-size: 1.1rem;
@@ -167,4 +263,5 @@ footer {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
   }
+
 }
