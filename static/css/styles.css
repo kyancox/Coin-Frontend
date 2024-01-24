@@ -255,7 +255,7 @@ input[type="file"]:active::before {
 @media only screen and (max-width: 430px) and (orientation: portrait) {
 
 .welcome-text p::after{
-  content: "For full website functionality, please view coinmerge.co on your computer.";
+  content: "For full website functionality, please turn your phone to landscape mode or view coinmerge.co on your computer.";
 }
 
 .welcome {
@@ -277,6 +277,25 @@ display: none;
 .connect-section {
   display:none;
 }
+
+}
+
+@media only screen and (max-width: 844px) and (orientation: landscape) {
+
+  .account-buttons img {
+    width: 150px;
+  }
+
+  .tutorials iframe {
+    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .styled-button {
+    
+    font-size: .75rem;
+  }
 
 }
 
