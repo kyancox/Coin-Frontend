@@ -103,3 +103,49 @@ body {
   }
 
 }
+
+@media only screen and (max-width: 844px) and (orientation: landscape) {
+
+
+
+  .background {
+    padding: 0 2rem;
+  }
+
+  .background p {
+    font-size: .9rem;
+  }
+
+  .github {
+    margin-bottom: 0;
+  }
+
+  .background a {
+    font-size: 1px;
+  }
+
+
+}
+
+@media only screen and (max-width: 932px) and (orientation: landscape) {
+
+
+  .background {
+    padding: 0 2rem;
+  }
+
+  .background p {
+    font-size: .9rem;
+  }
+
+
+  .github {
+    margin-bottom: 0;
+  }
+
+  .github a{
+    font-size: 1.5em;
+  }
+
+
+}
