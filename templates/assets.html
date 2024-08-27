@@ -22,25 +22,53 @@
     <link rel="stylesheet" href="/static/css/about.css" />
     <link rel="stylesheet" href="/static/css/assets.css" />
     <link rel="stylesheet" href="/static/css/styles.css" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
   </head>
   <body>
 
-    <header>
-        <div class="logo-container">
-          <a href="../index.html">
-            <img src="/static/images/logo.png" class="logo" alt="logo" />
-            <h1>CoinMerge</h1>
-          </a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html" id="home-but">Home</a></li>
-                <li><a href="/templates/about.html" id="about-but">About</a></li>
-                <li><a href="/templates/tutorials.html" id="tut-but">Tutorials</a></li>
-            </ul>
-        </nav>
-        <a href="https://www.linkedin.com/in/kyancox/" target="_blank" class="contact"><button>Contact</button></a>
-      </header>
+    <header
+    class="flex flex-row items-center justify-between text-white px-4"
+    style="background-color: #020035"
+  >
+    <a href="index.html" class="flex flex-row items-center justify-center">
+      <img
+        src="/static/images/logo.png"
+        class="logo"
+        alt="logo"
+        style="width: 75px; height: 75px"
+      />
+      <h1 class="text-2xl font-semibold">CoinMerge</h1>
+    </a>
+    <nav class="flex flex-row space-x-4 pr-3">
+      <a
+        href="index.html"
+        id="home-but"
+        class="text-lg hover:text-gray-500 transition duration-200 hidden md:block font-semibold"
+        >Home</a
+      >
+      <a
+        href="/templates/about.html"
+        id="about-but"
+        class="text-lg hover:text-gray-500 transition duration-200 font-semibold"
+        >About</a
+      >
+      <a
+        href="/templates/tutorials.html"
+        id="tut-but"
+        class="text-lg hover:text-gray-500 transition duration-200 hidden md:block font-semibold"
+        >Tutorials</a
+      >
+      <a
+        href="https://kyancox.com/"
+        target="_blank"
+        class="text-lg hover:text-gray-500 transition duration-200 font-semibold"
+        ><button class="font-semibold">Contact</button></a
+      >
+    </nav>
+  </header>
 
     <main>
       <div class="background">

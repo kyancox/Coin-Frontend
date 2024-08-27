@@ -22,7 +22,7 @@
 
 .welcome-text p {
   width: 32%;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .exchange-name {
@@ -71,7 +71,7 @@
 }
 #instructions {
   margin-top: 1.25rem;
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   margin-bottom: 0.3rem;
 }
 
@@ -102,20 +102,20 @@
 /* Info Grid */
 
 .grid-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr; */
   padding-bottom: 100px;
 }
 
 .grid-header {
   font-size: 30px;
-  margin-bottom: 20px;
-  padding: 0 15px 0 15px;
+  /* margin-bottom: 20px;
+  padding: 0 15px 0 15px; */
 }
 
 .tutorials {
-  grid-column: 1 / 2;
+  /* grid-column: 1 / 2; */
   padding-left: 20px;
 }
 
@@ -127,9 +127,9 @@
 /* Input Forms */
 
 .accounts-column {
-  grid-column: 2 / 3;
+  /* grid-column: 2 / 3; */
   font-size: 40px;
-  margin-left: 75px;
+  /* margin-left: 75px; */
 }
 
 .accounts {
@@ -143,7 +143,7 @@
 }
 
 .submit-buttons {
-  grid-column: 3;
+  /* grid-column: 3; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,7 +188,7 @@ input[type="file"]:active::before {
 }
 
 #file-label {
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 #file-name {
@@ -213,17 +213,16 @@ input[type="file"]:active::before {
 
 .styled-button {
   /* Visual styles */
-  padding: 10px 20px;
+  padding: 10px 15px;
   background-color: #f0e6d2; /* A very light #e7e7d9, similar to default #e7e7d9 */
   color:#020035ea;
   border: 2px solid #e2d1c3; /* A border that's slightly darker than the button's background */
   border-radius: 5px;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
-  box-shadow: 0 4px #d3c2b2; /* Shadow with a color that complements the button background */
   transition: all 0.3s ease;
   margin-top: 20px;
 }
@@ -251,7 +250,7 @@ input[type="file"]:active::before {
   font-size: 4em;
   
 }
-
+/* 
 @media only screen and (max-width: 430px) and (orientation: portrait) {
 
 .welcome-text p::after{
@@ -341,4 +340,4 @@ display: none;
   }
 
 
-}
+} */

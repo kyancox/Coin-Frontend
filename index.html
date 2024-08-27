@@ -18,36 +18,59 @@
     />
     <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="stylesheet" href="/static/css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <div class="logo-container">
-        <a href="index.html">
-          <img src="/static/images/logo.png" class="logo" alt="logo" />
-          <h1>CoinMerge</h1>
-        </a>
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" id="home-but">Home</a></li>
-          <li><a href="/templates/about.html" id="about-but">About</a></li>
-          <li><a href="/templates/tutorials.html" id="tut-but">Tutorials</a></li>
-        </ul>
+    <header
+      class="flex flex-row items-center justify-between text-white px-4"
+      style="background-color: #020035"
+    >
+      <a href="index.html" class="flex flex-row items-center justify-center">
+        <img
+          src="/static/images/logo.png"
+          class="logo"
+          alt="logo"
+          style="width: 75px; height: 75px"
+        />
+        <h1 class="text-2xl font-semibold">CoinMerge</h1>
+      </a>
+      <nav class="flex flex-row space-x-4 pr-3">
+        <a
+          href="index.html"
+          id="home-but"
+          class="text-lg hover:text-gray-500 transition duration-200 hidden md:block font-semibold"
+          >Home</a
+        >
+        <a
+          href="/templates/about.html"
+          id="about-but"
+          class="text-lg hover:text-gray-500 transition duration-200 font-semibold"
+          >About</a
+        >
+        <a
+          href="/templates/tutorials.html"
+          id="tut-but"
+          class="text-lg hover:text-gray-500 transition duration-200 hidden md:block font-semibold"
+          >Tutorials</a
+        >
+        <a
+          href="https://kyancox.com/"
+          target="_blank"
+          class="text-lg hover:text-gray-500 transition duration-200 font-semibold"
+          ><button class="font-semibold">Contact</button></a
+        >
       </nav>
-      <a
-        href="https://www.linkedin.com/in/kyancox/"
-        target="_blank"
-        class="contact"
-        ><button>Contact</button></a
-      >
     </header>
 
     <main>
       <section>
-        <div class="welcome">
-          <div class="welcome-text">
+        <div class="welcome hidden xl:block">
+          <div class="welcome-text ">
             <h1>Welcome to CoinMerge</h1>
-            <p>
+            <p class="font-medium">
               CoinMerge is a web-app where you can view all of your
               cryptocurrency assets from
               <a
@@ -76,19 +99,58 @@
           </div>
           <a href="/templates/about.html" id="learn">About CoinMerge</a>
         </div>
+
+        <div class="block xl:hidden bg-white p-4">
+          <div class=" rounded-lg p-4 " style="background-color: #e7e7d9;">
+            <h1 class="text-center text-xl font-bold">Welcome to CoinMerge</h1>
+            <p class="text-center text-lg">
+              CoinMerge is a web-app where you can view all of your
+              cryptocurrency assets from
+              <a
+                href="https://www.coinbase.com/"
+                target="”_blank”"
+                class="hover:underline"
+                style="color: #020035"
+                >Coinbase</a
+              >,
+              <a
+                href="https://www.gemini.com/"
+                target="”_blank”"
+                class="hover:underline"
+                style="color: #020035"
+                >Gemini</a
+              >, and
+              <a
+                href="https://www.ledger.com/ledger-live"
+                target="”_blank”"
+                class="hover:underline"
+                style="color: #020035"
+                >Ledger Live</a
+              >
+              in one place. The app utilizes your API keys from your Coinbase
+              and Gemini accounts, as well as a CSV file of your assets from
+              Ledger Live. Connect your API keys and CSV file to get started
+              now!
+            </p>
+          </div>
+        </div>
+
+        </div>
       </section>
 
-      <section class="connect-section">
+      <section class="connect-section xl:pt-4">
         <div class="connect-accounts">
-          <h2>Connect Your Accounts</h2>
-          <p id="instructions">
+          <h1 class="font-bold xl:text-3xl">Connect Your Accounts</h1>
+          <p id="instructions" class=" mx-4">
             Start by clicking on one of the icons to fill in your account
             information. <br />
             Once you click an icon, a tutorial will appear on how to obtain the
             needed information.
           </p>
         </div>
-        <div class="account-buttons">
+        <div
+          class="account-buttons gap-0 space-y-8 space-x-0 lg:space-x-24 flex-col lg:flex-row"
+        >
           <img
             src="/static/images/coinbase.png"
             alt=""
@@ -112,103 +174,125 @@
           />
         </div>
 
-        <div class="grid-container">
+        <div class="border w-2/3 mx-auto border-black my-4"></div>
+
+        <div
+          class="grid-container flex flex-col items-center justify-around 2xl:flex-row mr-8 mt-2"
+        >
           <div class="tutorials" style="display: none">
-            <h3 class="grid-header" id="tutorial-text">Tutorial for :</h3>
-            <iframe
-              width="1157"
-              height="752"
-              src="https://www.youtube.com/embed/dAMbJCXZwmk"
-              title="Coinbase API Key Creation Tutorial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              id="coinbase-tutorial"
-              style="display:none;"
-            ></iframe>
-            <iframe
-              width="1157"
-              height="752"
-              src="https://www.youtube.com/embed/sDlLeiEEyWk"
-              title="Gemini API Key Creation Tutorial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              id="gemini-tutorial"
-              style="display:none;"
-            ></iframe>
-            <iframe
-              width="1157"
-              height="752"
-              src="https://www.youtube.com/embed/2mLfz2RfbAI"
-              title="Ledger Live Operations CSV Tutorial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              id="ledger-tutorial"
-              style="display:none;"
-            ></iframe>
+            <a class="grid-header font-bold hover:underline" id="tutorial-text"
+              >Tutorial for
+            </a>
+            <span class="hidden 2xl:block">
+              <iframe
+                width="1157"
+                height="752"
+                src="https://www.youtube.com/embed/dAMbJCXZwmk"
+                title="Coinbase API Key Creation Tutorial"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                id="coinbase-tutorial"
+                style="display: none"
+              ></iframe>
+              <iframe
+                width="1157"
+                height="752"
+                src="https://www.youtube.com/embed/sDlLeiEEyWk"
+                title="Gemini API Key Creation Tutorial"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                id="gemini-tutorial"
+                style="display: none"
+              ></iframe>
+              <iframe
+                width="1157"
+                height="752"
+                src="https://www.youtube.com/embed/2mLfz2RfbAI"
+                title="Ledger Live Operations CSV Tutorial"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                id="ledger-tutorial"
+                style="display: none"
+              ></iframe>
+            </span>
           </div>
 
-          <div class="accounts-column">
-            <h3 class="grid-header" id="info-header" style="display: none">
+          <div
+            class="accounts-column flex flex-col items-center justify-center"
+          >
+            <h3
+              class="grid-header mx-auto"
+              id="info-header"
+              style="display: none"
+            >
               Information:
             </h3>
 
             <div class="accounts">
-              <div id="connect-coinbase" style="display: none">
+              <div id="connect-coinbase" class="mx-4" style="display: none">
                 <!-- Coinbase API Key Form -->
                 <form
                   action="http://127.0.0.1:5000/api/coinbase/keys"
                   method="post"
                 >
-                  <label for="coinbaseApiKey">Coinbase API Key:</label>
-                  <input
-                    type="text"
-                    id="coinbaseApiKey"
-                    name="api_key"
-                    placeholder="API Key"
-                    class="text-input"
-                  />
+                  <div class="flex-col flex items-center justify-center">
+                    <label for="coinbaseApiKey">Coinbase API Key:</label>
+                    <input
+                      type="text"
+                      id="coinbaseApiKey"
+                      name="api_key"
+                      placeholder="API Key"
+                      class="text-input"
+                    />
+                  </div>
                   <br />
-                  <label for="coinbaseApiSecret">Coinbase API Secret:</label>
-                  <input
-                    type="text"
-                    id="coinbaseApiSecret"
-                    name="api_secret"
-                    placeholder="API Secret"
-                    class="text-input"
-                  />
+                  <div class="flex-col flex items-center justify-center">
+                    <label for="coinbaseApiSecret">Coinbase API Secret:</label>
+                    <input
+                      type="text"
+                      id="coinbaseApiSecret"
+                      name="api_secret"
+                      placeholder="API Secret"
+                      class="text-input"
+                    />
+                  </div>
                 </form>
               </div>
 
-              <div id="connect-gemini" style="display: none">
+              <div id="connect-gemini" class="mx-4" style="display: none">
                 <!-- Gemini API Key Form -->
                 <form
                   action="http://127.0.0.1:5000/api/gemini/keys"
                   method="post"
                 >
-                  <label for="geminiApiKey">Gemini API Key:</label>
-                  <input
-                    type="text"
-                    id="geminiApiKey"
-                    name="api_key"
-                    placeholder="API Key"
-                    class="text-input"
-                  />
+                  <div class="flex-col flex items-center justify-center">
+                    <label for="geminiApiKey">Gemini API Key:</label>
+                    <input
+                      type="text"
+                      id="geminiApiKey"
+                      name="api_key"
+                      placeholder="API Key"
+                      class="text-input"
+                    />
+                  </div>
                   <br />
-                  <label for="geminiApiSecret">Gemini API Secret:</label>
-                  <input
-                    type="text"
-                    id="geminiApiSecret"
-                    name="api_secret"
-                    placeholder="API Secret"
-                    class="text-input"
-                  />
+                  <div class="flex-col flex items-center justify-center">
+                    <label for="geminiApiSecret">Gemini API Secret:</label>
+                    <input
+                      type="text"
+                      id="geminiApiSecret"
+                      name="api_secret"
+                      placeholder="API Secret"
+                      class="text-input"
+                    />
+                  </div>
                 </form>
               </div>
 
-              <div id="connect-ledger" style="display: none">
+              <div id="connect-ledger"  style="display: none">
                 <!-- Upload Ledger CSV Form -->
                 <form
                   action="/api/ledger/upload-csv"
@@ -225,7 +309,7 @@
                   />
                   <br />
                   <!-- Custom label that triggers the file input -->
-                  <label for="file" class="styled-button" id="file-label"
+                  <label for="file" class="styled-button " id="file-label"
                     >Choose File</label
                   >
                   <br />
@@ -321,14 +405,14 @@
           "To view your balances, please provide API keys from Coinbase & Gemini, as well as a CSV file from your Ledger Live application.";
         // Update tutorial text
         document.getElementById("tutorial-text").textContent =
-          "Tutorial for " + accountName + ":";
+          "Tutorial for " + accountName + "";
         // Update information text
         document.getElementById("info-header").style.display = "block";
         document.getElementById("info-header").textContent =
           "Enter " + accountName + " information below:";
         // Show tutorial block
         document.getElementsByClassName("tutorials")[0].style.display = "block";
-        document.getElementById(id+'-tutorial').style.display = "block";
+        document.getElementById(id + "-tutorial").style.display = "block";
         // Show submit button
         document.getElementById("submit-" + id).style.display = "block";
       }

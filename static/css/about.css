@@ -37,7 +37,8 @@ body {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
     display: inline-block;
     margin: 0; 
     padding: 0;

@@ -9,10 +9,8 @@ body {
 }
 
 /* New Nav-Bar */
-
+/* 
 header li, a, button {
-  /* color: #edf0f1; */
-  /* color: #020035; */
   color: #e7e7d9;
   text-decoration: none;
 }
@@ -22,13 +20,11 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #020035;
-  /* background-color: #e7e7d9; */
 
 }
 
 .logo-container {
   cursor: pointer;
-  /* background-color: #e7e7d9; */
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
@@ -86,7 +82,8 @@ header button {
 
 header button:hover {
   background-color: rgba(0, 136, 169, 0.8);
-}
+} */
+
 
 /* Footer */
 
@@ -96,7 +93,7 @@ footer {
   text-align: center;
   padding: 0.625rem;
 }
-
+/* 
 @media only screen and (max-width: 430px) and (orientation: portrait) {
 
   header a button{
@@ -288,4 +285,4 @@ footer {
     padding: 0.5rem 1rem;
   }
 
-}
+} */
